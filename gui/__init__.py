@@ -13,7 +13,7 @@ class Window:
         pygame.display.set_caption(TITLE)
         self.bresenham = Bresenham()
 
-        self.font = pygame.font.SysFont("Comic Sans MS", 20)
+        self.font = pygame.font.SysFont("Consolas", 15)
 
         self.start_pair = None
         self.end_pair = None
@@ -27,6 +27,14 @@ class Window:
 
     def draw_line(self, x1, y1, x2, y2):
         self.bresenham.line(x1, y1, x2, y2)
+        pygame.draw.circle(self.win, BLACK, (x1, y1), RADIUS_POINT // 2)
+        pygame.draw.circle(self.win, BLACK, (x2, y2), RADIUS_POINT // 2)
+
+        start_point_mess = self.font.render(f"({x1},{y1})", True, BLACK, WHITE)
+        end_point_mess = self.font.render(f"({x2},{y2})", True, BLACK, WHITE)
+        self.win.blit(start_point_mess, (x1 - start_point_mess.get_width() // 2 ,y1 - start_point_mess.get_height() - RADIUS_POINT))
+        self.win.blit(end_point_mess, (x2 - end_point_mess.get_width() // 2, y2 - end_point_mess.get_height() - RADIUS_POINT))
+
         for point in self.bresenham.points:
             self.draw_point(point[0], point[1])
 

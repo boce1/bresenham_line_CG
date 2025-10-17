@@ -19,7 +19,7 @@ class Bresenham:
                 x += step_x
                 if p >= 0:
                     y += step_y
-                    p += 2 *delta_y - 2*delta_x
+                    p += 2*delta_y - 2*delta_x
                 else:
                     p += 2 * delta_y
 
