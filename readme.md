@@ -8,7 +8,9 @@ pip install pygame
 ```
 
 ## How to run
+```bash
 python3 main.py
+```
 
 ## Проекта разработил
 Боян Зарев
