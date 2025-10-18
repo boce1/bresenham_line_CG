@@ -20,3 +20,4 @@ python3 main.py
 гр. 42
 
 # Documentation
+Документацията се намира в ```123222004_MathematilOverviewAndSoftwareImplementationOfBresenhamAlgorithmForLine_CG.pdf```.
